@@ -2,9 +2,10 @@ import { SCRIPT_DATA } from "@/data/don-giovanni";
 import { ScrollArea } from "@/components/ui/scroll-area";
 import { Separator } from "@/components/ui/separator";
 import { motion } from "framer-motion";
-import { Music, Download, BookOpen } from "lucide-react";
+import { Music, Download, BookOpen, Film } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import heroImage from "@assets/generated_images/baroque_opera_stage_with_red_curtains.png";
+import { Link } from "wouter";
 
 export default function Libretto() {
   return (
@@ -31,9 +32,16 @@ export default function Libretto() {
               <span className="uppercase tracking-[0.2em] text-sm font-bold">Finale</span>
               <span className="h-px w-12 bg-white/50"></span>
             </div>
-            <p className="text-lg text-white/80 max-w-lg mx-auto font-serif-body italic leading-relaxed">
+            <p className="text-lg text-white/80 max-w-lg mx-auto font-serif-body italic leading-relaxed mb-8">
               "Pentiti, cangia vita: è l'ultimo momento!"
             </p>
+            
+            <Link href="/storyboard">
+              <Button size="lg" className="bg-white text-black hover:bg-white/90 font-serif-body font-bold tracking-wide shadow-lg transform hover:scale-105 transition-all duration-300">
+                <Film className="mr-2 w-4 h-4" />
+                View Visual Storyboard
+              </Button>
+            </Link>
           </motion.div>
         </div>
       </div>

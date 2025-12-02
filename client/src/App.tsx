@@ -5,11 +5,13 @@ import { Toaster } from "@/components/ui/toaster";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import NotFound from "@/pages/not-found";
 import Libretto from "@/pages/libretto";
+import Storyboard from "@/pages/storyboard";
 
 function Router() {
   return (
     <Switch>
       <Route path="/" component={Libretto} />
+      <Route path="/storyboard" component={Storyboard} />
       <Route component={NotFound} />
     </Switch>
   );
