@@ -2,13 +2,16 @@ import { motion } from "framer-motion";
 import { Link } from "wouter";
 import { ArrowLeft, Music, Film } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { Separator } from "@/components/ui/separator";
 
-// Import generated images
+// Import all generated images
 import scene1 from "@assets/generated_images/stone_commendatore_entering_don_giovanni's_dining_room.png";
-import scene2 from "@assets/generated_images/don_giovanni_shaking_hands_with_the_stone_statue.png";
-import scene3 from "@assets/generated_images/don_giovanni_defiant_against_the_statue.png";
-import scene4 from "@assets/generated_images/don_giovanni_dragged_into_hellfire.png";
+import scene2 from "@assets/generated_images/leporello_hiding_under_the_table_in_terror.png";
+import scene3 from "@assets/generated_images/don_giovanni_boldly_accepting_the_invitation.png";
+import scene4 from "@assets/generated_images/don_giovanni_shaking_hands_with_the_stone_statue.png";
+import scene5 from "@assets/generated_images/don_giovanni_defiant_against_the_statue.png";
+import scene6 from "@assets/generated_images/don_giovanni_dragged_into_hellfire.png";
+import scene7 from "@assets/generated_images/other_characters_entering_the_ruined_hall.png";
+import scene8 from "@assets/generated_images/ensemble_singing_the_final_moral.png";
 
 const STORYBOARD_DATA = [
   {
@@ -16,36 +19,72 @@ const STORYBOARD_DATA = [
     title: "L'Ospite di Pietra",
     subtitle: "The Stone Guest Arrives",
     image: scene1,
-    quote: "Non si pasce di cibo mortale chi si pasce di cibo celeste.",
-    translation: "He who feeds on celestial food does not feed on mortal food.",
+    quote: "Don Giovanni, a cenar teco m'invitasti, e son venuto.",
+    translation: "Don Giovanni, you invited me to dine with you, and I have come.",
     character: "Commendatore"
   },
   {
     id: 2,
+    title: "Il Terrore",
+    subtitle: "Leporello's Terror",
+    image: scene2,
+    quote: "Ah! padron… Siam tutti morti…",
+    translation: "Ah! Master… we are all dead…",
+    character: "Leporello"
+  },
+  {
+    id: 3,
+    title: "L'Invito",
+    subtitle: "The Invitation",
+    image: scene3,
+    quote: "Ho fermo il cuore in petto: non ho timor: verrò!",
+    translation: "My heart is firm in my chest: I have no fear: I will come!",
+    character: "Don Giovanni"
+  },
+  {
+    id: 4,
     title: "Il Pegno",
     subtitle: "The Deadly Handshake",
-    image: scene2,
+    image: scene4,
     quote: "Dammi la mano in pegno.",
     translation: "Give me your hand as a pledge.",
     character: "Commendatore"
   },
   {
-    id: 3,
+    id: 5,
     title: "Il Rifiuto",
     subtitle: "The Refusal",
-    image: scene3,
+    image: scene5,
     quote: "No, vecchio infatuato!",
     translation: "No, you deluded old man!",
     character: "Don Giovanni"
   },
   {
-    id: 4,
+    id: 6,
     title: "La Caduta",
     subtitle: "Descent into Hell",
-    image: scene4,
+    image: scene6,
     quote: "Che inferno!… che terror…",
     translation: "What hell!… what terror…",
     character: "Don Giovanni"
+  },
+  {
+    id: 7,
+    title: "La Scoperta",
+    subtitle: "The Aftermath",
+    image: scene7,
+    quote: "Ah, dov'è il perfido? Dov'è l'indegno?",
+    translation: "Ah, where is the traitor? Where is the scoundrel?",
+    character: "Tutti"
+  },
+  {
+    id: 8,
+    title: "La Morale",
+    subtitle: "The Final Moral",
+    image: scene8,
+    quote: "Questo è il fin di chi fa mal.",
+    translation: "This is the end of those who do evil.",
+    character: "Tutti"
   }
 ];
 
@@ -63,7 +102,7 @@ export default function Storyboard() {
             </Link>
             <div>
               <h1 className="text-lg font-serif-head font-bold leading-none">Visual Storyboard</h1>
-              <p className="text-xs text-muted-foreground">Don Giovanni Finale</p>
+              <p className="text-xs text-muted-foreground">Don Giovanni Finale - Full Sequence</p>
             </div>
           </div>
           <div className="w-8 h-8 rounded-full bg-primary flex items-center justify-center text-primary-foreground shadow-sm">
@@ -73,7 +112,7 @@ export default function Storyboard() {
       </header>
 
       <main className="flex-1 container mx-auto px-4 py-12 max-w-6xl">
-        <div className="grid grid-cols-1 gap-24">
+        <div className="grid grid-cols-1 gap-32">
           {STORYBOARD_DATA.map((scene, index) => (
             <motion.div 
               key={scene.id}
@@ -136,7 +175,7 @@ export default function Storyboard() {
           ))}
         </div>
 
-        <div className="mt-24 text-center">
+        <div className="mt-32 text-center">
            <Link href="/">
             <Button variant="outline" size="lg" className="font-serif-body group">
               <Music className="mr-2 w-4 h-4 group-hover:text-primary transition-colors" />
