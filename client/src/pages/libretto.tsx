@@ -33,7 +33,8 @@ export default function Libretto() {
               <span className="h-px w-12 bg-white/50"></span>
             </div>
             <p className="text-lg text-white/80 max-w-lg mx-auto font-serif-body italic leading-relaxed mb-8">
-              "Pentiti, cangia vita: è l'ultimo momento!"
+              Pentiti, cangia vita: è l'ultimo momento!<br/>
+              Creato da VICTORIA PUCALOVA
             </p>
             
             <Link href="/storyboard">
@@ -45,31 +46,6 @@ export default function Libretto() {
           </motion.div>
         </div>
       </div>
-
-      {/* Header (Sticky below hero) */}
-      <header className="border-b border-border/40 sticky top-0 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 z-20 transition-all">
-        <div className="container mx-auto px-4 h-16 flex items-center justify-between max-w-5xl">
-          <div className="flex items-center gap-3">
-            <div className="w-8 h-8 rounded-full bg-primary flex items-center justify-center text-primary-foreground shadow-sm">
-              <Music size={16} />
-            </div>
-            <div className="hidden sm:block">
-              <h2 className="text-sm font-serif-head font-bold leading-none">W.A. Mozart</h2>
-              <p className="text-xs text-muted-foreground">Libretto by Lorenzo Da Ponte</p>
-            </div>
-          </div>
-          <div className="flex gap-2">
-            <Button variant="ghost" size="sm" className="hidden sm:flex hover:bg-accent/50">
-              <BookOpen className="mr-2 w-4 h-4" />
-              About
-            </Button>
-            <Button size="sm" className="bg-primary hover:bg-primary/90 text-primary-foreground shadow-md">
-              <Download className="mr-2 w-4 h-4" />
-              PDF
-            </Button>
-          </div>
-        </div>
-      </header>
 
       {/* Main Content */}
       <main className="flex-1 container mx-auto px-4 py-12 max-w-5xl">
