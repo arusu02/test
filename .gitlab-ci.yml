@@ -1,0 +1,37 @@
+image: node:20
+
+stages:
+  - build
+  - deploy
+
+variables:
+  npm_config_cache: "$CI_PROJECT_DIR/.npm"
+
+cache:
+  paths:
+    - .npm
+    - node_modules
+
+before_script:
+  - npm install
+
+build:
+  stage: build
+  script:
+    - npm run build
+  artifacts:
+    paths:
+      - dist/
+    expire_in: 1 week
+  only:
+    - main
+
+deploy:
+  stage: deploy
+  script:
+    - npm run start
+  environment:
+    name: production
+  only:
+    - main
+  when: manual
